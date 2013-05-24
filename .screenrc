@@ -1,0 +1,38 @@
+startup_message off
+
+# Fix for RVM
+shell -/bin/bash
+
+# Enable and format the status bar showing all virtual shells 
+hardstatus alwayslastline
+hardstatus string '%{= kB}[%-Lw%{+r}%50L> %n%f* %t%{= kB}%+Lw%< %{= kB}%-= %{-}][%{B} %m/%d %{W}%C %A %{y}]'
+#hardstatus string "%{.Kk}%-Lw%50L>%?%F%{..y}%:%{..y}%?%n%f*[%t]%{.Kk}%+Lw%= %{y}[%{B} %m/%d %{W}%C %A %{y}]"
+#hardstatus string '%{= Kg}[%{G} %{G}%H %{g}][%= %{= KY}%?%-Lw%?%{R}(%{W}%n*%f%t%?(%u)%?%{R})%{Y}%?%+Lw%?%?%= %{g}][%{C} %m/%d %{W}%c %{Y}%1`%% %{g}]'
+
+# Turn off the visual bell (i.e the annoying flash when you can't backspace anymore)
+vbell off
+
+#reload configuration file
+bind R source $HOME/.screenrc
+
+# Default scroll back
+defscrollback 2000
+
+#### Key Bindings ####
+escape "``"
+
+
+# Default screen sessions
+screen 0
+screen 1
+screen 2
+
+# Run script to setup ssh-agent environment variables for screen, so I don't have to type ssh passwords during my screen session
+# Copied from http://screen.frogcircus.org/ssh-agent
+#exec $HOME/screen-ssh-agent
+#exec true
+#source $HOME/.ssh/screen_agent
+
+# Swiching to first screen
+next
+
