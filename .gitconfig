@@ -13,6 +13,7 @@
 [user]
 	name = Nick Jones
 	email = darellik@gmail.com
+	signingkey = 8D7DEACA
 [github]
 	user = nickjones
 	email = darellik@gmail.com
@@ -72,6 +73,7 @@
 	fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 	squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 	ri = rebase --interactive --autosquash
+	cleanup = "!f() { git branch --merged master | grep -v \"\\* master\" | xargs -n 1 git branch -d; }; f"
 
 [color]
 	ui = auto
@@ -103,3 +105,5 @@
 	rebase = true
 [rebase]
 	autosquash = true
+[push]
+	default = simple
